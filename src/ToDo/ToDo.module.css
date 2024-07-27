@@ -1,0 +1,285 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+   
+}
+.hero {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    grid-row: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "list inputs inputs"
+        "list total comp"
+        "list dates dates"
+    ;
+    gap: 1.5rem;
+    
+    padding: 0rem 7rem 2rem 7rem;
+}
+
+.noTasks {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 2rem;
+}
+
+.title {
+    font-size: 5rem;
+    font-weight: 800;
+    margin:  1rem 1rem 1rem 1rem;
+    margin-left: 4.2rem;
+}
+.btns .dltBtn{
+    color: rgba(226, 53, 53, 0.876);
+}
+.btns .dltBtn:hover{
+    background-color: rgba(226, 53, 53, 0.876);
+    color:rgb(234, 234, 234);
+}
+.btns .upBtn, .btns .downBtn{
+    color: aliceblue;
+}
+.btns .upBtn:hover, .btns .downBtn:hover{
+    color: rgb(43, 43, 43);
+    background-color: rgb(237, 237, 237);
+}
+.btns .cmpBtn{
+    color: rgb(0, 208, 255);
+}
+.btns .cmpBtn:hover{
+    background-color:cadetblue;
+    color:#e7e7e7;
+}
+.list {
+    border-radius: 20px;
+    list-style: none;
+    height: 500px;
+    overflow-y: auto;
+    
+}
+.listt{
+    grid-area: list;
+    background-color: rgb(25, 25, 25);
+    box-shadow: 0px 0px 30px rgba(153, 205, 50, 0.142);
+    border-radius: 20px;
+    padding: 1.0rem;
+    list-style: none;
+    grid-area: list;
+    
+}
+.listt h1{
+    margin-left: 1rem;
+}
+
+.listItem {
+    min-width: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    background-color: rgb(198, 198, 198);
+    color: black;
+    margin: 0.7rem;
+    border-radius: 0.6rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    transition: all 300ms ease;
+}
+
+.listItem.completed {
+    background-color: rgb(154, 206, 52);
+    color: #242424;
+    .btns .cmpBtn{
+        background-color: rgb(91, 129, 9);
+        color: #e4e4e4;
+    }
+}
+
+.btns button {
+    color: rgb(178, 255, 13);
+    font-size: 1rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    background-color: rgb(22, 22, 22);
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    transition: all 300ms ease;
+}
+
+.btns button:hover {
+    color: rgb(22, 22, 22);
+    background-color: rgb(91, 129, 9);
+}
+
+.btns {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: 10px;
+}
+
+.inputs {
+    grid-area: inputs;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(25, 25, 25);
+    padding: 1.2rem;
+    border-radius: 20px;
+    gap: 1rem;
+}
+.inputSection{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    
+}
+
+
+.inputs input {
+    background-color: rgb(182, 181, 181);
+    color: black;
+    padding: 1rem;
+    width: 100%;
+    border-radius: 15px;
+    font-size: 15px;
+    border: none;
+}
+
+.inputs input::placeholder {
+    color: rgb(67, 67, 67);
+}
+
+.inputs button,.listt .addBtn {
+    background-color: rgb(13, 13, 13);
+    color: rgb(178, 255, 13);
+    width: 6rem;
+    border-radius: 15px;
+    border: none;
+    font-size: large;
+    transition: all 300ms ease;
+}
+.inputs button{
+    padding: 1rem;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: rgb(125, 172, 21);
+    color: #242424;
+}
+.listt .addBtn {
+    width: 8rem;
+    padding: 1rem;
+    color:  rgba(243, 70, 70, 0.876);
+    margin-left: 0.6rem;
+    margin-top: 1rem;
+}
+.listt .addBtn:hover{
+    background-color: rgb(173, 52, 52);
+    color: white;
+    
+}
+
+.inputs button:hover {
+    background-color:rgb(154, 206, 52);
+    color: rgb(22, 22, 22);
+}
+.total{
+    grid-area: total;
+}
+.comp{
+    grid-area: comp;
+}
+.total, .comp{
+    background-color: rgb(25, 25, 25);
+    border-radius: 20px;
+    padding: 1.2rem;
+    line-height: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 3rem;
+}
+.comp h1, p{
+    font-size: 2rem;
+    color:rgb(125, 172, 21);
+}
+.total h1, .total p{
+    color:cadetblue;
+}
+.total p, .comp p{
+    text-align: right;
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.resetCmp{
+    background-color: #242424;
+    color: yellowgreen;
+    font-size: 1.2rem;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    
+}
+.comp p{
+    display: flex;
+    justify-content: space-between;
+}
+.comp p button:hover{
+    background-color: #343434;
+}
+
+@media (max-width:1020px) {
+    .hero{
+        grid-template-areas: 
+        "list list list"
+        "total comp comp"
+        "inputs inputs inputs"
+        ;
+    }
+}
+
+.dates{
+    grid-area: dates;
+    background-color: rgb(25, 25, 25);
+    padding: 1.2rem;
+    border-radius: 20px;
+    
+}
+.weekday{
+    font-size: 2rem;
+
+}
+.month{
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #e4e4e4;
+}
+.first{
+    display: flex;
+    
+    justify-content: space-between;
+    align-items: center;
+}
+.second{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.day{
+    font-size: 6rem;
+    font-weight: 800;
+    color: yellowgreen;
+}
+.year{
+   
+    font-size: 1rem;
+}
+
+
